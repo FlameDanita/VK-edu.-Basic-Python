@@ -1,18 +1,15 @@
-from typing import List, Dict
+from typing import List
 
-def make_most_common_keys(d: Dict[int, int]) -> List[int]:
-   
-    lst = []
-    for key in sorted(d.items(), key=lambda item: item[1], reverse=True):
-        lst.append(key[0])
-        
-    return lst
+def get_indexes(nums1: List[int], nums2: List[int]) -> List[int]:
+    indexes = []
+    for index, (num1, num2) in enumerate(zip(nums1, nums2)):
+        if num1 < num2:
+            indexes.append(index)
+
+    return indexes
 
 code = []
 while data := input():
    code.append(data)
 code = "\n".join(code)
 exec(code)
-
-# d = {5:3, 3:5, 0:2, 4:6, 7:10}
-# print(make_most_common_keys(d))
